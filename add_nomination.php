@@ -1,4 +1,40 @@
-
+<?php
+//Data that we put in the form will going to check in the database if same ElectionId exist they will tell ElectionID alreay exists.
+// If the ElectionID is not present the data will going to add in a candidate table. 
+$showAlert = false;
+$showError = false;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //Connect you to the database
+	include '_dbconnect.php';
+	//Post the values that we get in the form
+	$name = $_POST["name"];
+	$date = $_POST["date"];
+	$firstname = $_POST["firstname"];
+	$lastname = $_POST["lastname"];
+	$electionid = $_POST["electionid"];
+    $gender = $_POST["gender"];
+    $branch = $_POST["branch"];
+    $year = $_POST["year"];
+    // Check the ElectionID already exist or not.
+    $existSql = "SELECT * FROM `candidates` WHERE electionid = '$electionid'";
+    $result = mysqli_query($conn, $existSql);
+    $numExistRows = mysqli_num_rows($result);
+    if($numExistRows > 0){
+        $showError = "ElectionID Already exists.";
+    }else{
+        if($numExistRows==0){
+            $sql = "INSERT INTO `candidates` (`election`, `dateofelection`, `fname`, `lname`, `gender`, `branch`, `year`, `electionid`) VALUES ('$name', '$date', '$firstname', '$lastname', '$gender', '$branch', '$year', '$electionid')";
+            $result = mysqli_query($conn, $sql);
+            if($result){
+                $showAlert = true;
+            }
+        }
+        else{
+            $showError = "Candidate Not Registered";
+        }
+}
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
