@@ -33,6 +33,17 @@
 			border-color: #17a2b8;
 		}
 	</style>
+	<script type = "text/javascript" > 
+		history.pushState(null, null, location.href);history.back(); history.forward(); window.onpopstate = function () { history.go(1); }; 
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover({
+				trigger: 'hover',
+				content: '<b><p>Sai chandra<br>Email: saichandra510@gmail.com<br>Whatsapp: 7386588330</p></b>',
+				html: true}
+			);
+			
+		});
+	</script>  
 	
   </head>
  
