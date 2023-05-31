@@ -97,7 +97,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 		<div class="card-body">
 			<h5 class="card-title">Nomination</h5>
 			<p class="card-text">Add a new candidate to elections.</p>
-			<a href="add_election.php" class="btn btn-primary">Proceed</a>
+			<a href="add_voter.php" class="btn btn-primary">Proceed</a>
 		</div>
 	</div>
 	<div class="card" style="width: 18rem;">
