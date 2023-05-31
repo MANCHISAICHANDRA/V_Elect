@@ -5,7 +5,7 @@ The aim of the project is to achieve an Online Voting System.V_Elect will help u
 
 
 
-## Deployment
+## Deployment 🖥️
 
 To deploy this project on your system , 
 
@@ -25,7 +25,7 @@ Now you can access the database and Login using following Credentials.
 -->You can add new voters using an admin account. Voter account provided above is just for demo login you can delete that account using Admin account.
 
 
-## Screenshots
+## Screenshots 📸
 
 Home👇
 [![home.jpg](https://i.postimg.cc/mrYHCqsP/home.jpg)](https://postimg.cc/06NjqVrv)
