@@ -1,4 +1,11 @@
-
+<?php
+//The login username and password that we have used in the admin login page if the credentials are true Session will start.
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header ("location: login.php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
