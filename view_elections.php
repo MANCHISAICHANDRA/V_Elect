@@ -1,4 +1,16 @@
-
+<?php
+//Connects you to the Database
+include '_dbconnect.php';
+//Delete the Candidate that we have to remove from the election.
+$delete = false;
+$update=false;
+if(isset($_GET['delete'])){
+	$electionid = $_GET['delete'];
+	$delete = true;
+	$sql = "DELETE FROM `candidates` WHERE `electionid`= '$electionid'";
+	$result = mysqli_query($conn,$sql);
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
