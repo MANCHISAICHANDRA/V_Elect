@@ -1,4 +1,29 @@
-
+<?php
+// Connecting to Database to check the credentials of voter account.
+$login = false;
+$showError = false;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    
+    include '_dbconnect.php';//This file Connects to the database of the system.
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    
+    $sql = "SELECT * FROM `voter` where username ='$username' and password = '$password' ";
+    $result = mysqli_query($conn, $sql);
+    $num = mysqli_num_rows($result);
+    if($num == 1){
+        $login = true;
+        session_start();//If your credentials are correct this will start your session.
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        header("location: voter_main_page.php");
+      }
+    
+    else{
+        $showError = "Invalid Credentials";
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
