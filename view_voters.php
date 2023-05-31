@@ -1,4 +1,16 @@
-
+<?php
+// Connect you to the Database
+include '_dbconnect.php';
+//Delete the Voter that we have to remove from the election.
+$delete = false;
+$update=false;
+if(isset($_GET['delete'])){
+	$enrollment = $_GET['delete'];
+	$delete = true;
+	$sql = "DELETE FROM `voter` WHERE `enrollment`= '$enrollment'";
+	$result = mysqli_query($conn,$sql);
+  }
+?>
 <!doctype html>
 <html lang="en">
 
