@@ -11,7 +11,7 @@ To deploy this project on your system ,
 
 --> Clone the repository on your system  
 
---> Access them by creating a localhost using XAMPP and then extract the folder already present in XAMPP.
+--> Access them by creating a localhost using XAMPP and then extract them into htdocs folder already present in XAMPP.
 
 --> Now start the Apache, MySQL in XAMPP and view folder using localhost in any browser .
 
